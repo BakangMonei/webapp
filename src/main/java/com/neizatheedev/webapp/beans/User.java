@@ -2,20 +2,21 @@ package com.neizatheedev.webapp.beans;
 
 
 public class User {
-    private String uid;
-    private String email;
-    private String displayName;
+    private String uid, email, firstName, lastName, gender, country, phoneNumber;
 
-    public User() {
+    public User(){
     }
 
-    public User(String uid, String email, String displayName) {
+    public User(String uid, String email, String firstName, String lastName, String gender, String country, String phoneNumber) {
         this.uid = uid;
         this.email = email;
-        this.displayName = displayName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.country = country;
+        this.phoneNumber = phoneNumber;
     }
 
-    // Getters and Setters
     public String getUid() {
         return uid;
     }
@@ -32,11 +33,43 @@ public class User {
         this.email = email;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

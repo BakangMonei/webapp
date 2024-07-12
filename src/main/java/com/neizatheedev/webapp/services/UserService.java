@@ -1,28 +1,26 @@
 package com.neizatheedev.webapp.services;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.UserRecord;
-import com.google.firebase.cloud.FirestoreClient;
-import com.neizatheedev.webapp.beans.User;
-import org.springframework.stereotype.Service;
+import com.google.firebase.auth.*;
+import com.google.firebase.cloud.*;
+import com.neizatheedev.webapp.beans.*;
+import org.springframework.stereotype.*;
 
 import java.util.concurrent.ExecutionException;
+
 
 @Service
 public class UserService {
 
-    public User registerUser(String email, String password, String displayName) throws FirebaseAuthException, ExecutionException, InterruptedException {
+    public User registerUser(String email, String password, String firstName, String lastName, String gender, String country, String phoneNumber) throws FirebaseAuthException, ExecutionException, InterruptedException {
         // Create user in Firebase Auth
         UserRecord.CreateRequest request = new UserRecord.CreateRequest()
                 .setEmail(email)
-                .setPassword(password)
-                .setDisplayName(displayName);
+                .setPassword(password);
 
         UserRecord userRecord = FirebaseAuth.getInstance().createUser(request);
 
-        // Create user in Firestore
-        User user = new User(userRecord.getUid(), email, displayName);
+        // Create user in Firestore with custom attributes
+        User user = new User(userRecord.getUid(), email, firstName, lastName, gender, country, phoneNumber);
         FirestoreClient.getFirestore().collection("users").document(userRecord.getUid()).set(user).get();
 
         return user;

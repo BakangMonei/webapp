@@ -4,8 +4,7 @@
 Create a system for managing events where users can register for events, view event details, and receive notifications. Event organizers (admins) can create and manage events. Superadmins have additional capabilities.
 
 ## Features
-
-### User
+### a. User
 **Functionalities:**
 
 **Register for Events:**
@@ -22,7 +21,7 @@ Create a system for managing events where users can register for events, view ev
 - Notifications about any changes or updates to the events.
 - Reminders before the event starts.
 
-### Admin (Event Organizer)
+### b. Admin (Event Organizer)
 **Functionalities:**
 
 **Create Events:**
@@ -47,7 +46,7 @@ Create a system for managing events where users can register for events, view ev
 - Admins can send announcements or updates about the events to all registered users.
 - Admins can send reminders or important information as the event date approaches.
 
-### Superadmin
+### c. Super-Admin
 **Functionalities:**
 
 **Manage Organizers:**
@@ -68,7 +67,7 @@ Create a system for managing events where users can register for events, view ev
 
 ## Implementation Details
 
-### Backend (Spring Boot)
+### Backend (Spring Boot [Java])
 
 **User Entity:**
 - Attributes: id, name, email, role (user, admin, superadmin), registeredEvents (list of event IDs).
