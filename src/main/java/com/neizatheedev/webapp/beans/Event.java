@@ -5,11 +5,8 @@ import java.util.List;
 
 public class Event {
 
-    private String eventId;
-    private String title;
-    private String description;
+    private String eventId, title, description, location;
     private LocalDateTime dateTime;
-    private String location;
     private int capacity;
     private List<String> registeredUsers;
 
