@@ -1,6 +1,6 @@
 package com.neizatheedev.webapp.controllers;
 
-import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.*;
 import com.neizatheedev.webapp.beans.*;
 import com.neizatheedev.webapp.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // This is when user is creating a new user is creating an account
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody UserRegistrationRequest request) {
         try {
@@ -50,9 +49,11 @@ public class UserController {
         public void setEmail(String email) {
             this.email = email;
         }
+
         public String getPassword() {
             return password;
         }
+
         public void setPassword(String password) {
             this.password = password;
         }
@@ -99,10 +100,8 @@ public class UserController {
     }
 
     static class UserSignInRequest {
-        private String email;
-        private String password;
+        private String email, password;
 
-        // Getters and Setters
         public String getEmail() {
             return email;
         }

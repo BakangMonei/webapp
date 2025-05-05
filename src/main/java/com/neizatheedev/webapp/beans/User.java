@@ -4,7 +4,8 @@ package com.neizatheedev.webapp.beans;
 public class User {
     private String uid, email, firstName, lastName, gender, country, phoneNumber;
 
-    public User(){
+    public User() {
+        super();
     }
 
     public User(String uid, String email, String firstName, String lastName, String gender, String country, String phoneNumber) {

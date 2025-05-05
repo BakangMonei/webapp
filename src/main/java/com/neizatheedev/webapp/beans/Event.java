@@ -1,7 +1,7 @@
 package com.neizatheedev.webapp.beans;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import java.time.*;
+import java.util.*;
 
 public class Event {
 
@@ -20,7 +20,9 @@ public class Event {
         this.registeredUsers = registeredUsers;
     }
 
-    public Event(){}
+    public Event() {
+
+    }
 
     public String getEventId() {
         return eventId;
